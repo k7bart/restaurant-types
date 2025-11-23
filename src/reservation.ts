@@ -1,12 +1,9 @@
 import { BaseEntity } from "./common";
+import { Guests } from "./guests";
 import { User } from "./user";
 
-interface Guests {
-    adults: number;
-    children?: number;
-}
-
-interface ReservedBy extends Pick<User, "id" | "name" | "surname" | "phone"> {
+interface ReservedBy extends Pick<User, "name" | "surname" | "phone"> {
+    id?: User["id"];
     email?: User["email"];
 }
 

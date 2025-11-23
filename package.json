@@ -1,13 +1,14 @@
 {
     "name": "@k7bart/restaurant-shared-types",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "main": "index.js",
     "types": "dist/index.d.ts",
     "files": [
         "dist"
     ],
     "scripts": {
-        "build": "tsc"
+        "build": "tsc",
+        "start": "npm run build && npm link"
     },
     "private": false,
     "author": "Kateryna Bartienieva",

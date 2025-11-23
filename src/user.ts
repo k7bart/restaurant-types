@@ -1,7 +1,10 @@
 import { BaseEntity } from "./common";
 import { Order } from "./order";
+import { Reservation } from "./reservation";
+import { Ticket } from "./ticket";
 
 interface Address extends BaseEntity {
+    isCurrent: boolean;
     city: string;
     street: string;
     house: string;
@@ -20,9 +23,10 @@ interface User extends BaseEntity {
     birthday?: Date;
     orders: Order[];
     addresses: Address[];
-    currentAddressId?: string;
-    reservationsIds: string[];
-    tickets: string[]; // Ticket[]
+    reservations: Reservation[];
+    tickets: Ticket[];
+    refferalLink: string;
+    referralPromoCode: string;
 }
 
 type LoginCredentials = Pick<User, "email" | "password">;
