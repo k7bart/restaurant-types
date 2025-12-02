@@ -2,4 +2,4 @@ interface BaseEntity {
     id: string;
 }
 
-export { BaseEntity };
+export type { BaseEntity };

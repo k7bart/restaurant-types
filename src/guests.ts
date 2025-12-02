@@ -3,4 +3,4 @@ interface Guests {
     children?: number;
 }
 
-export { Guests };
+export type { Guests };

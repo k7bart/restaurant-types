@@ -1,8 +1,8 @@
-import { BaseEntity } from "./common";
+import type { BaseEntity } from "./common";
 
 interface Event extends BaseEntity {
     title: string;
     date: Date;
 }
 
-export { Event };
+export type { Event };

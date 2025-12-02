@@ -1,6 +1,6 @@
-import { BaseEntity } from "./common";
-import { Guests } from "./guests";
-import { User } from "./user";
+import type { BaseEntity } from "./common";
+import type { Guests } from "./guests";
+import type { User } from "./user";
 
 interface ReservedBy extends Pick<User, "name" | "surname" | "phone"> {
     id?: User["id"];
@@ -21,4 +21,4 @@ interface ReservationForm
     time: Date;
 }
 
-export { Reservation, ReservationForm };
+export type { Reservation, ReservationForm };

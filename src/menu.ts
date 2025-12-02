@@ -1,31 +1,28 @@
-import { BaseEntity } from "./common";
+import type { BaseEntity } from "./common";
 
 interface Nutrient {
     name: string;
     amount: number;
-    unit: string;
+    unit: "kcal" | "g";
 }
 
 interface Dish extends BaseEntity {
-    amount: number;
-    category: string;
-    description: string;
+    amount?: number;
+    category: Category["name"];
+    description?: string;
     discountPercent?: number;
-    ingredients: string[];
-    isDishOfTheDay: boolean;
+    ingredients?: string[];
+    isDishOfTheDay?: boolean;
     isVegan: boolean;
     name: string;
-    nutrients: Nutrient[];
-    photos: string[];
+    nutrients?: Nutrient[];
+    photos?: string[];
     price: number;
 }
 
 interface Category {
-    name: string;
-    dishes: Dish;
+    name: "breakfast" | "desserts" | "beverages";
+    dishes: Dish[];
 }
 
-interface Menu {
-    categories: Category[];
-}
-export { Dish, Nutrient, Menu };
+export type { Category, Dish, Nutrient };

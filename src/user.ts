@@ -1,10 +1,11 @@
-import { BaseEntity } from "./common";
-import { Order } from "./order";
-import { Reservation } from "./reservation";
-import { Ticket } from "./ticket";
+import type { BaseEntity } from "./common";
+import type { Order } from "./order";
+import type { Reservation } from "./reservation";
+import type { Ticket } from "./ticket";
 
 interface Address extends BaseEntity {
-    isCurrent: boolean;
+    addressComment?: string;
+    isCurrent?: boolean;
     city: string;
     street: string;
     house: string;
@@ -36,4 +37,4 @@ interface RegistrationData extends Omit<User, "id"> {
     rememberMe?: boolean;
 }
 
-export { Address, User, LoginCredentials, RegistrationData };
+export type { Address, User, LoginCredentials, RegistrationData };

@@ -1,10 +1,10 @@
-import { BaseEntity } from "./common";
-import { Event } from "./event";
-import { Guests } from "./guests";
+import type { BaseEntity } from "./common";
+import type { Event } from "./event";
+import type { Guests } from "./guests";
 
 interface Ticket extends BaseEntity {
     event: Event;
     guests: Guests;
 }
 
-export { Ticket };
+export type { Ticket };
