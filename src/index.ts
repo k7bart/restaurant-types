@@ -5,3 +5,4 @@ export type { Address, User, LoginCredentials, RegistrationData } from "./user";
 export type { Reservation, ReservationForm } from "./reservation";
 export type { Ticket } from "./ticket";
 export type { Event } from "./event";
+export type { Option } from "./option";
