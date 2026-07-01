@@ -15,10 +15,4 @@ interface Reservation extends BaseEntity {
     additionalRequirements?: string;
 }
 
-interface ReservationForm
-    extends Omit<Reservation, "id" | "status" | "dateTime"> {
-    date: Date;
-    time: Date;
-}
-
-export type { Reservation, ReservationForm };
+export type { Reservation };

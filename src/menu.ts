@@ -7,7 +7,6 @@ interface Nutrient {
 }
 
 interface Dish extends BaseEntity {
-    amount?: number;
     category: Category["name"];
     description?: string;
     discountPercent?: number;

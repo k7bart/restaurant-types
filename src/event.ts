@@ -10,7 +10,8 @@ interface Event extends BaseEntity {
     menu?: Dish[];
     price?: number;
     specialGuest?: string;
-    photo?: string;
+    photo: string;
+    pathName: string;
 }
 
 export type { Event };
