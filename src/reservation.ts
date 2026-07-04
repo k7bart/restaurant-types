@@ -2,10 +2,8 @@ import type { BaseEntity } from "./common";
 import type { Guests } from "./guests";
 import type { User } from "./user";
 
-interface ReservedBy extends Pick<User, "name" | "surname" | "phone"> {
-    id?: User["id"];
-    email?: User["email"];
-}
+type ReservedBy = Pick<User, "firstName" | "lastName" | "phone" | "email"> &
+    BaseEntity;
 
 interface Reservation extends BaseEntity {
     dateTime: Date;

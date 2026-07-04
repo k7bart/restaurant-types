@@ -2,9 +2,7 @@ import type { BaseEntity } from "./common";
 import type { Dish } from "./menu";
 import type { Address, User } from "./user";
 
-interface Customer extends Pick<User, "name" | "phone">, BaseEntity {
-    surname?: User["surname"];
-}
+type Customer = Pick<User, "firstName" | "lastName" | "phone"> & BaseEntity;
 
 type DeliveryMethod = "delivery" | "selfPickup" | "advance";
 type PaymentMethod = "cash" | "online" | "card";
@@ -18,7 +16,7 @@ interface Order extends BaseEntity {
     orderComment?: string;
     orderedItems: Dish[];
     paymentMethod: PaymentMethod;
-    pickupAddress?: { id: string; text: string };
+    pickupAddress?: Address;
     total: number;
 }
 

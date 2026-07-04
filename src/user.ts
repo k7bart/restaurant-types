@@ -16,25 +16,24 @@ interface Address extends BaseEntity {
 }
 
 interface User extends BaseEntity {
-    email: string;
-    password: string;
-    name: string;
-    surname?: string;
+    email?: string;
+    firstName: string;
+    lastName?: string;
     phone: string;
     birthday?: Date;
-    orders: Order[];
-    addresses: Address[];
-    reservations: Reservation[];
-    tickets: Ticket[];
-    refferalLink: string;
+    orders?: Order[];
+    addresses?: Address[];
+    reservations?: Reservation[];
+    tickets?: Ticket[];
+    referralLink: string;
     referralPromoCode: string;
 }
 
-type LoginCredentials = Pick<User, "email" | "password">;
-
-interface RegistrationData extends Omit<User, "id"> {
-    confirmPassword: string;
+interface LoginCredentials extends Pick<User, "email"> {
+    password: string;
     rememberMe?: boolean;
 }
+type SignupRequest = Pick<User, "firstName" | "lastName" | "phone" | "email"> &
+    LoginCredentials;
 
-export type { Address, User, LoginCredentials, RegistrationData };
+export type { Address, User, LoginCredentials, SignupRequest };
