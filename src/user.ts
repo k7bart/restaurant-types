@@ -29,7 +29,7 @@ interface User extends BaseEntity {
     referralPromoCode: string;
 }
 
-interface LoginCredentials extends Pick<User, "email"> {
+interface LoginCredentials extends Pick<User, "phone"> {
     password: string;
     rememberMe?: boolean;
 }
