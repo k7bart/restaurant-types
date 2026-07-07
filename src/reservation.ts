@@ -5,12 +5,19 @@ import type { User } from "./user";
 type ReservedBy = Pick<User, "firstName" | "lastName" | "phone" | "email"> &
     BaseEntity;
 
+type ReservationStatus = "new" | "confirmed" | "cancelled";
+
 interface Reservation extends BaseEntity {
     dateTime: Date;
-    status: "new";
+    status: ReservationStatus;
     guests: Guests;
     reservedBy: ReservedBy;
     additionalRequirements?: string;
 }
 
-export type { Reservation };
+type ReservationRequest = Pick<
+    Reservation,
+    "dateTime" | "guests" | "reservedBy" | "additionalRequirements"
+>;
+
+export type { Reservation, ReservationRequest };

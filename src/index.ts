@@ -2,7 +2,7 @@ export type { BaseEntity } from "./common";
 export type { Dish, Nutrient, Category } from "./menu";
 export type { Customer, DeliveryMethod, Order, PaymentMethod } from "./order";
 export type { Address, User, LoginCredentials, SignupRequest } from "./user";
-export type { Reservation } from "./reservation";
+export type { Reservation, ReservationRequest } from "./reservation";
 export type { Ticket } from "./ticket";
 export type { Event } from "./event";
 export type { Option } from "./option";
