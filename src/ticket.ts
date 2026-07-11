@@ -7,4 +7,9 @@ interface Ticket extends BaseEntity {
     guests: Guests;
 }
 
-export type { Ticket };
+type TicketRequest = {
+    eventId: string;
+    guests: Guests;
+};
+
+export type { Ticket, TicketRequest };

@@ -20,4 +20,4 @@ type ReservationRequest = Pick<
     "dateTime" | "guests" | "reservedBy" | "additionalRequirements"
 >;
 
-export type { Reservation, ReservationRequest };
+export type { Reservation, ReservationRequest, ReservationStatus, ReservedBy };

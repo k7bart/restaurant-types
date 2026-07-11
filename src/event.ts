@@ -1,5 +1,4 @@
 import type { BaseEntity } from "./common";
-import { Dish } from "./menu";
 
 interface Event extends BaseEntity {
     title: string;
@@ -7,7 +6,7 @@ interface Event extends BaseEntity {
     date: Date;
     ageLimit?: number;
     language?: string;
-    menu?: Dish[];
+    menu?: string[];
     price?: number;
     specialGuest?: string;
     photo: string;

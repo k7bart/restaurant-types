@@ -1,6 +1,6 @@
 import type { Dish } from "./menu";
 
-type CartItem = Dish & { amount: number };
+type CartItem = Dish & { quantity: number };
 
 interface Cart {
     items: CartItem[];
