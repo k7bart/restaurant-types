@@ -2,8 +2,7 @@ import type { BaseEntity } from "./common";
 import type { Guests } from "./guests";
 import type { User } from "./user";
 
-type ReservedBy = Pick<User, "firstName" | "lastName" | "phone" | "email"> &
-    BaseEntity;
+type ReservedBy = Pick<User, "firstName" | "lastName" | "phone" | "email">;
 
 type ReservationStatus = "new" | "confirmed" | "cancelled";
 

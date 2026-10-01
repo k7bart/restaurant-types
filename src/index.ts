@@ -9,7 +9,13 @@ export type {
     OrderStatus,
     PaymentMethod,
 } from "./order";
-export type { Address, User, LoginCredentials, SignupRequest } from "./user";
+export type {
+    Address,
+    User,
+    AuthenticatedUser,
+    LoginCredentials,
+    SignupRequest,
+} from "./user";
 export type {
     Reservation,
     ReservationRequest,

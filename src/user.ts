@@ -25,9 +25,21 @@ interface User extends BaseEntity {
     addresses?: Address[];
     reservations?: Reservation[];
     tickets?: Ticket[];
-    referralLink: string;
-    referralPromoCode: string;
+    referralLink?: string;
+    referralPromoCode?: string;
 }
+
+type AuthenticatedUser = Pick<
+    User,
+    | "id"
+    | "firstName"
+    | "lastName"
+    | "phone"
+    | "email"
+    | "birthday"
+    | "referralLink"
+    | "referralPromoCode"
+>;
 
 interface LoginCredentials extends Pick<User, "phone"> {
     password: string;
@@ -36,4 +48,10 @@ interface LoginCredentials extends Pick<User, "phone"> {
 type SignupRequest = Pick<User, "firstName" | "lastName" | "phone" | "email"> &
     LoginCredentials;
 
-export type { Address, User, LoginCredentials, SignupRequest };
+export type {
+    Address,
+    User,
+    AuthenticatedUser,
+    LoginCredentials,
+    SignupRequest,
+};
