@@ -21,13 +21,30 @@ interface User extends BaseEntity {
     lastName?: string;
     phone: string;
     birthday?: Date;
+    /** Populated client-side or by future profile APIs — not returned by `/auth/me` today. */
     orders?: Order[];
+    /** Populated client-side or by future address APIs — not returned by `/auth/me` today. */
     addresses?: Address[];
+    /** Populated client-side or by future reservation list APIs — not returned by `/auth/me` today. */
     reservations?: Reservation[];
+    /** Populated client-side or by future ticket APIs — not returned by `/auth/me` today. */
     tickets?: Ticket[];
-    referralLink: string;
-    referralPromoCode: string;
+    referralLink?: string;
+    referralPromoCode?: string;
 }
+
+/** Identity fields returned by auth endpoints (`/auth/me`, login, signup, `PATCH /me`). */
+type MeUser = Pick<
+    User,
+    | "id"
+    | "firstName"
+    | "lastName"
+    | "phone"
+    | "email"
+    | "birthday"
+    | "referralLink"
+    | "referralPromoCode"
+>;
 
 interface LoginCredentials extends Pick<User, "phone"> {
     password: string;
@@ -36,4 +53,10 @@ interface LoginCredentials extends Pick<User, "phone"> {
 type SignupRequest = Pick<User, "firstName" | "lastName" | "phone" | "email"> &
     LoginCredentials;
 
-export type { Address, User, LoginCredentials, SignupRequest };
+export type {
+    Address,
+    User,
+    MeUser,
+    LoginCredentials,
+    SignupRequest,
+};

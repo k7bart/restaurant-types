@@ -1,7 +1,6 @@
-type Response<T> = {
+type Response<T = void> = {
     status: string;
     message?: string;
-    data: T;
-};
+} & (T extends void ? { data?: T } : { data: T });
 
 export type { Response };
