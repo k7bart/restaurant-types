@@ -12,7 +12,7 @@ export type {
 export type {
     Address,
     User,
-    MeUser,
+    AuthenticatedUser,
     LoginCredentials,
     SignupRequest,
 } from "./user";

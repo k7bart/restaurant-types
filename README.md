@@ -17,8 +17,8 @@ Deep imports (for example `@k7bart/restaurant-shared-types/dist/ticket`) are not
 ## Build & publish
 
 ```bash
-npm run build   # cleans dist/ and emits .d.ts only
-npm publish     # runs prepublishOnly → build
+npm run build
+npm publish
 ```
 
 There is no runtime JavaScript entry; `"types"` and `"exports"` point at `dist/index.d.ts`.
@@ -27,8 +27,8 @@ There is no runtime JavaScript entry; `"types"` and `"exports"` point at `dist/i
 
 | Area | Types | Backend today |
 |------|--------|----------------|
-| Auth user | `MeUser` from `/auth/me`, login, signup | Identity fields only |
+| Auth user | `AuthenticatedUser` from `/auth/me`, login, signup | Identity fields only |
 | Full profile | `User` with optional `orders`, `addresses`, `reservations`, `tickets` | Nested arrays filled client-side until domain APIs land |
-| Reservations | `Reservation.id` is **number** | Counter sequence in Mongo |
+| Reservations | `Reservation.id` is string | Counter sequence in Mongo (coerce to string on the wire) |
 | Cart line items | `CartItem.quantity` | Client Redux only |
-| Auth refresh / logout | `Response` with optional `data` | No JSON body on success |
+| Auth refresh / logout | `Response` with optional `data` | No `data` on success |

@@ -1,3 +1,4 @@
+import type { BaseEntity } from "./common";
 import type { Guests } from "./guests";
 import type { User } from "./user";
 
@@ -5,9 +6,7 @@ type ReservedBy = Pick<User, "firstName" | "lastName" | "phone" | "email">;
 
 type ReservationStatus = "new" | "confirmed" | "cancelled";
 
-interface Reservation {
-    /** Numeric sequence from the backend counter, not a string UUID. */
-    id: number;
+interface Reservation extends BaseEntity {
     dateTime: Date;
     status: ReservationStatus;
     guests: Guests;
